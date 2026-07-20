@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2장. 내가 먹는 당뇨약 완전 정리 — 혈당과 함께 살아가기</title>
+  <meta name="description" content="메트포르민, DPP-4 억제제, SGLT-2 억제제, 설폰요소제, GLP-1, 인슐린까지. 당뇨약의 작동 원리와 주의사항을 쉽게 정리했습니다." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="progress"></div>
+  <header class="site">
+    <div class="nav-wrap">
+      <a class="logo" href="index.html">🩺 혈당과 함께 살아가기</a>
+      <button id="menu-btn" aria-label="메뉴 열기">☰ 목차</button>
+      <nav class="menu">
+        <a href="index.html">홈</a>
+        <a href="chapter1.html">1. 당뇨 이해</a>
+        <a href="chapter2.html" class="on">2. 당뇨약</a>
+        <a href="chapter3.html">3. 건강기능식품</a>
+        <a href="chapter4.html">4. 생활습관</a>
+        <a href="chapter5.html">5. 운동법</a>
+        <a href="chapter6.html">6. 실전 가이드</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <span class="chapter-label">CHAPTER 2</span>
+    <h1>💊 내가 먹는 당뇨약 완전 정리</h1>
+    <p class="lead">
+      당뇨약은 종류마다 몸속에서 하는 일이 다릅니다.
+      내 약이 어떤 원리로 혈당을 낮추는지 알면, 왜 식전에 먹는지·왜 저혈당을 조심해야 하는지도 이해됩니다.
+      처방전이나 약봉투의 성분명과 비교하면서 읽어보세요.
+    </p>
+
+    <div class="box danger">
+      <div class="box-title">🚨 가장 중요한 원칙</div>
+      <ul>
+        <li>약을 <strong>임의로 끊거나 용량을 바꾸지 마세요.</strong> 혈당이 좋아진 것은 약이 일을 잘하고 있다는 뜻일 수 있습니다.</li>
+        <li>부작용이 의심되면 스스로 중단하지 말고 <strong>의사·약사와 먼저 상의</strong>하세요.</li>
+        <li>다른 병원 약, 건강기능식품을 먹기 시작할 때는 반드시 알려주세요.</li>
+      </ul>
+    </div>
+
+    <h2><span class="num">1.</span>한눈에 보는 당뇨약 지도</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>계열</th><th>대표 성분</th><th>하는 일 (쉽게)</th><th>저혈당 위험</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>메트포르민</strong></td>
+            <td>메트포르민<br />(다이아벡스, 글루코파지 등)</td>
+            <td>간이 포도당을 너무 많이 만들지 않게 막고, 세포가 인슐린 말을 잘 듣게 함</td>
+            <td>거의 없음</td>
+          </tr>
+          <tr>
+            <td><strong>DPP-4 억제제</strong></td>
+            <td>시타글립틴(자누비아), 리나글립틴(트라젠타), 제미글립틴(제미글로) 등</td>
+            <td>식사 후 인슐린 분비를 돕는 호르몬(인크레틴)이 빨리 분해되지 않게 지켜줌</td>
+            <td>거의 없음</td>
+          </tr>
+          <tr>
+            <td><strong>SGLT-2 억제제</strong></td>
+            <td>다파글리플로진(포시가), 엠파글리플로진(자디앙) 등</td>
+            <td>넘치는 포도당을 소변으로 내보냄</td>
+            <td>거의 없음</td>
+          </tr>
+          <tr>
+            <td><strong>설폰요소제</strong></td>
+            <td>글리메피리드(아마릴), 글리클라지드(디아미크롱) 등</td>
+            <td>췌장을 자극해 인슐린을 더 많이 짜냄</td>
+            <td><strong>있음 ⚠️</strong></td>
+          </tr>
+          <tr>
+            <td><strong>티아졸리딘디온</strong></td>
+            <td>피오글리타존(액토스 등)</td>
+            <td>지방·근육 세포가 인슐린 말을 잘 듣게 함 (자물쇠 기름칠)</td>
+            <td>거의 없음</td>
+          </tr>
+          <tr>
+            <td><strong>알파-글루코시다아제 억제제</strong></td>
+            <td>아카보스(글루코바이), 보글리보스 등</td>
+            <td>장에서 탄수화물이 천천히 흡수되게 함</td>
+            <td>거의 없음</td>
+          </tr>
+          <tr>
+            <td><strong>GLP-1 수용체 작용제</strong> (주사)</td>
+            <td>세마글루타이드(오젬픽·위고비), 리라글루타이드(빅토자) 등</td>
+            <td>인슐린 분비 촉진 + 식욕 감소 + 위 배출 지연</td>
+            <td>단독으로는 낮음</td>
+          </tr>
+          <tr>
+            <td><strong>인슐린</strong> (주사)</td>
+            <td>기저 인슐린(란투스, 트레시바 등), 식사 인슐린(휴마로그 등)</td>
+            <td>부족한 열쇠(인슐린)를 직접 넣어줌</td>
+            <td><strong>있음 ⚠️</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14px;color:var(--ink-soft)">* 괄호 안은 국내에서 흔한 제품명 예시입니다. 같은 성분이라도 회사마다 이름이 다를 수 있으니 약봉투의 '성분명'을 확인하세요.</p>
+
+    <h2><span class="num">2.</span>메트포르민 — 당뇨약의 반장</h2>
+    <p>
+      전 세계에서 가장 먼저, 가장 많이 처방되는 약입니다. 60년 넘게 쓰이며 안전성이 충분히 검증됐고,
+      2형 당뇨병 진단 시 <strong>1차 치료제</strong>로 권장됩니다.
+    </p>
+    <div class="card">
+      <h3>어떻게 일할까?</h3>
+      <ul>
+        <li>밤사이 간이 포도당을 <strong>과잉 생산하는 것을 억제</strong>합니다 → 공복 혈당이 내려갑니다.</li>
+        <li>근육 등 세포의 <strong>인슐린 감수성을 높입니다</strong> → 같은 인슐린으로 더 많은 포도당을 처리합니다.</li>
+        <li>혼자서는 저혈당을 거의 일으키지 않고, 체중 증가도 없습니다.</li>
+      </ul>
+      <h3>알아둘 점</h3>
+      <ul>
+        <li><strong>속쓰림·설사·메스꺼움</strong>이 흔한 부작용입니다. 대부분 식사 직후 복용하고 저용량부터 시작하면 좋아집니다. 서방정(천천히 녹는 형태)으로 바꾸면 나아지는 경우도 많습니다.</li>
+        <li>장기 복용 시 <strong>비타민 B12 흡수가 줄어들 수 있어</strong> 1~2년마다 확인이 권장됩니다.</li>
+        <li>CT 조영제 검사나 큰 수술 전에는 일시 중단이 필요할 수 있으니 <strong>검사 전 메트포르민 복용 사실을 꼭 알리세요.</strong></li>
+      </ul>
+    </div>
+
+    <h2><span class="num">3.</span>DPP-4 억제제 — 조용한 도우미</h2>
+    <p>
+      식사를 하면 장에서 <strong>인크레틴</strong>이라는 호르몬이 나와 "밥 들어왔으니 인슐린 준비해!"라고
+      췌장에 신호를 보냅니다. 그런데 이 호르몬은 DPP-4라는 효소에 의해 몇 분 만에 분해됩니다.
+      DPP-4 억제제는 이 <strong>분해 효소를 막아 인크레틴이 더 오래 일하게</strong> 해줍니다.
+    </p>
+    <ul>
+      <li>혈당이 높을 때만 인슐린 분비를 도와서 <strong>저혈당 위험이 매우 낮습니다.</strong></li>
+      <li>체중에 거의 영향이 없고 부작용이 적어, 고령 환자에게도 많이 쓰입니다.</li>
+      <li>메트포르민과 복합제(제미메트, 자누메트 등)로 한 알에 합쳐 나오는 경우가 많습니다.</li>
+    </ul>
+
+    <h2><span class="num">4.</span>SGLT-2 억제제 — 소변으로 당을 버리는 약</h2>
+    <p>
+      콩팥은 원래 소변으로 빠져나가려는 포도당을 다시 붙잡아 몸에 되돌립니다.
+      SGLT-2 억제제는 이 '재흡수 통로'를 막아, <strong>하루 60~80g의 포도당을 소변으로 내보냅니다.</strong>
+    </p>
+    <ul>
+      <li>대규모 연구에서 <strong>심부전과 콩팥병 진행을 늦추는 효과</strong>가 확인되어, 심장·콩팥이 약한 환자에게 우선 권장됩니다.</li>
+      <li>당과 함께 칼로리가 빠져나가 <strong>체중이 2~3kg 줄고 혈압도 약간 내려가는</strong> 부수 효과가 있습니다.</li>
+      <li>소변에 당이 많아지므로 <strong>요로·생식기 감염</strong>에 주의하고, 물을 충분히 마시고 청결을 유지하세요.</li>
+      <li>심한 탈수나 금식 상태에서는 케톤산증(드물지만 위험한 상태) 위험이 있어, 심하게 아프거나 금식할 때는 의사와 상의합니다.</li>
+    </ul>
+
+    <h2><span class="num">5.</span>설폰요소제 — 힘 좋은 대신 조심할 약</h2>
+    <p>
+      췌장을 직접 자극해 인슐린을 더 짜내는 약입니다. 혈당 강하 효과가 강력하고 약값이 저렴하지만,
+      <strong>혈당이 낮을 때도 인슐린을 짜내기 때문에 저혈당 위험이 있습니다.</strong>
+    </p>
+    <div class="box warn">
+      <div class="box-title">⚠️ 설폰요소제(예: 글리메피리드) 복용 중이라면</div>
+      <ul>
+        <li><strong>식사를 거르면 저혈당이 올 수 있습니다.</strong> 약을 먹었다면 식사도 꼭 하세요.</li>
+        <li>평소보다 운동을 많이 한 날, 술을 마신 날은 저혈당 위험이 커집니다.</li>
+        <li>사탕이나 주스 같은 <strong>비상 당분을 늘 가지고 다니세요.</strong> (6장 저혈당 대처법 참고)</li>
+        <li>체중이 다소 늘 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <h2><span class="num">6.</span>그 밖의 먹는 약</h2>
+    <div class="card">
+      <h3>피오글리타존 (티아졸리딘디온 계열)</h3>
+      <p>
+        지방과 근육 세포의 '녹슨 자물쇠에 기름칠'을 해서 인슐린 저항성을 개선합니다.
+        효과가 나타나기까지 몇 주 걸리며, 체중 증가·부종이 있을 수 있어 심부전 환자는 주의가 필요합니다.
+      </p>
+      <h3>아카보스 (알파-글루코시다아제 억제제)</h3>
+      <p>
+        장에서 탄수화물을 분해하는 효소를 막아 <strong>식후 혈당이 천천히 오르게</strong> 합니다.
+        반드시 <strong>식사 직전(첫 숟가락과 함께)</strong> 복용해야 효과가 있습니다.
+        가스·복부팽만이 흔하지만 시간이 지나면 줄어듭니다.
+      </p>
+    </div>
+
+    <h2><span class="num">7.</span>주사 치료 — GLP-1과 인슐린</h2>
+    <h3>GLP-1 수용체 작용제 (오젬픽, 트루리시티 등)</h3>
+    <p>
+      인크레틴 호르몬을 흉내 내는 주사제로, 인슐린 분비를 돕고 <strong>식욕을 줄이며 위에서 음식이 천천히 내려가게</strong> 합니다.
+      혈당과 체중을 함께 잡고, 일부 약물은 심혈관 보호 효과도 입증되어 사용이 빠르게 늘고 있습니다.
+      메스꺼움이 흔한 초기 부작용이며 대부분 몇 주 안에 적응됩니다.
+    </p>
+    <h3>인슐린 주사</h3>
+    <p>
+      "인슐린을 맞으면 당뇨가 심한 것"이라는 오해가 많지만,
+      인슐린은 <strong>부족한 열쇠를 직접 보충하는 가장 확실한 방법</strong>일 뿐입니다.
+      췌장 기능이 많이 떨어졌거나, 혈당이 매우 높거나, 수술·임신 등 특별한 상황에서 사용합니다.
+    </p>
+    <ul>
+      <li><strong>기저 인슐린</strong> — 하루 1회, 24시간 잔잔하게 깔아주는 인슐린 (란투스, 트레시바 등)</li>
+      <li><strong>식사 인슐린</strong> — 식사 직전, 식후 혈당 상승을 잡는 빠른 인슐린 (휴마로그, 노보래피드 등)</li>
+      <li>저혈당 대비가 필수이며, 주사 부위(배, 허벅지 등)를 <strong>돌아가며</strong> 맞아야 피부가 딱딱해지지 않습니다.</li>
+    </ul>
+
+    <h2><span class="num">8.</span>약 복용, 이것만은 지키세요</h2>
+    <div class="box tip">
+      <div class="box-title">✅ 복약 체크리스트</div>
+      <ul>
+        <li><strong>매일 같은 시간</strong>에 복용하세요. 알람이나 약통(요일 약통)을 활용하면 좋습니다.</li>
+        <li>한 번 잊었다면? 생각난 시점이 다음 복용 시간과 가까우면 <strong>건너뛰고 다음 회부터</strong> 정상 복용하세요. 절대 두 배로 먹지 마세요.</li>
+        <li>약봉투·처방전을 사진으로 찍어 두면 병원을 옮기거나 응급 상황에서 큰 도움이 됩니다.</li>
+        <li>감기약·진통제·한약·건강기능식품을 새로 먹을 땐 약사에게 <strong>"당뇨약 복용 중"</strong>이라고 알리세요.</li>
+        <li>술은 저혈당 위험을 높이고 간에 부담을 줍니다. 마신다면 소량, 반드시 음식과 함께.</li>
+      </ul>
+    </div>
+
+    <div class="pager">
+      <a href="chapter1.html">
+        <span class="dir">← 이전</span>
+        <span class="ttl">1장. 당뇨병, 쉽게 이해하기</span>
+      </a>
+      <a href="chapter3.html" class="next">
+        <span class="dir">다음 →</span>
+        <span class="ttl">3장. 연구로 검증된 건강기능식품</span>
+      </a>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="disclaimer">
+      ⚠️ <strong>꼭 읽어주세요.</strong> 이 전자책은 일반적인 건강 정보를 제공하기 위한 것으로,
+      의사의 진단이나 처방을 대신할 수 없습니다. 약 복용량 변경, 건강기능식품 섭취 시작,
+      새로운 운동 시작 전에는 반드시 담당 의사·약사와 상의하세요.
+    </div>
+    <p>© 2026 혈당과 함께 살아가기 · 당뇨 환자를 위한 친절한 안내서</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
