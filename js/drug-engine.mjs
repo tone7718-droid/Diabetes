@@ -1,4 +1,4 @@
-import { ingredients, contextIngredients } from '../content/drugs.mjs';
+import { ingredients, contextIngredients, uncertainIngredients } from '../content/drugs.mjs';
 export function normalize(value) {
   return String(value).normalize('NFKC').toLowerCase().trim()
     .replace(/\d+(?:\.\d+)?\s*(?:mg|mcg|µg|g|iu|units?|u)(?:\s*\/\s*ml)?\b/gi, '')
@@ -13,7 +13,7 @@ export function normalize(value) {
 // when what remains is an exact supported name, so an unknown word is never guessed.
 const suffix = /(?:필름코팅정|장용정|정|캡슐|프리필드펜|펜주|주|tabs?|capsules?|caps?|pen|브롬화수소산염|염산염|벤조산염|황산염|타르타르산염|인산염|프로판디올|세스퀴수화물|일수화물|반수화물|수화물|칼슘|엘프롤린|l프롤린|hydrochloride|hcl|hydrobromide|benzoate|sulfate|tartrate|phosphate|propanediol|sesquihydrate|monohydrate|hemihydrate|hydrate|calcium|lproline)$/;
 const index = new Map();
-for (const item of [...ingredients, ...contextIngredients]) {
+for (const item of [...ingredients, ...contextIngredients, ...uncertainIngredients]) {
   for (const alias of item.aliases) {
     const key = normalize(alias);
     if (index.has(key) && index.get(key).id !== item.id) throw new Error('Ambiguous alias: ' + alias);
@@ -83,10 +83,12 @@ export function analyze(input, context = {}) {
   const classes = new Set(recognized.map(x => x.class));
   const has = name => classes.has(name);
   const ruleIds = [];
+  if (recognized.some(x=>x.uncertain)) ruleIds.push('insulinForm');
   if (unknown.length) ruleIds.push('incomplete');
   if (duplicates.length) ruleIds.push('duplicate');
   if (has('insulin') || has('su') || has('glinide')) ruleIds.push('hypoglycemia');
   if (has('dpp4') && (has('glp1') || has('dual'))) ruleIds.push('dppIncretin');
+  if (seen.has('miglitol') && (has('insulin') || has('su') || has('glinide'))) ruleIds.push('miglitol');
   if (seen.has('acarbose') && (has('insulin') || has('su') || has('glinide'))) ruleIds.push('acarbose');
   if (has('insulin') && has('tzd')) ruleIds.push('insulinTzd');
   if (recognized.some(x => x.id === 'repaglinide') && seen.has('gemfibrozil')) ruleIds.push('repGem');

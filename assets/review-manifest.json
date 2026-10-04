@@ -48,23 +48,33 @@
     },
     {
       "id": "shared-ui",
-      "sourceHash": "cc902c826fe33b4e254c82185b815a9f7543c32d00b2ca09adc2c293126617c7",
-      "translationHash": "cc902c826fe33b4e254c82185b815a9f7543c32d00b2ca09adc2c293126617c7"
+      "sourceHash": "776554931b6c422b0e11397cf8411ae019cc46a3b592a5bd426f5cb594c14541",
+      "translationHash": "776554931b6c422b0e11397cf8411ae019cc46a3b592a5bd426f5cb594c14541"
     },
     {
       "id": "shared-drugClasses",
-      "sourceHash": "38e900739d8b337fe0ff113f40793c1dce3809d89391d3aa91395f167e8f963e",
-      "translationHash": "38e900739d8b337fe0ff113f40793c1dce3809d89391d3aa91395f167e8f963e"
+      "sourceHash": "6b5892e31a6dbe24f57640f49bd1d9387d5714f3cbf0983c3ee53863e9b69049",
+      "translationHash": "6b5892e31a6dbe24f57640f49bd1d9387d5714f3cbf0983c3ee53863e9b69049"
     },
     {
       "id": "shared-ingredients",
-      "sourceHash": "a65a04efebd7693d49a0d3a31af614d88f436314e60a4cbcae11ffd4a5cbf977",
-      "translationHash": "a65a04efebd7693d49a0d3a31af614d88f436314e60a4cbcae11ffd4a5cbf977"
+      "sourceHash": "592193875ba84e213f4b0bd4af22cfffc4527db8f155df9050cfcc2744d57642",
+      "translationHash": "592193875ba84e213f4b0bd4af22cfffc4527db8f155df9050cfcc2744d57642"
     },
     {
       "id": "shared-rules",
-      "sourceHash": "5c41c2faab9d20036cdf334267e832947967e39932af9002e61cd078a407ba24",
-      "translationHash": "5c41c2faab9d20036cdf334267e832947967e39932af9002e61cd078a407ba24"
+      "sourceHash": "6258f9932c5b8e79036f527a4e5692fb23460b5b957b5c25c502948f2e95f5d5",
+      "translationHash": "6258f9932c5b8e79036f527a4e5692fb23460b5b957b5c25c502948f2e95f5d5"
+    },
+    {
+      "id": "shared-contextIngredients",
+      "sourceHash": "09808cba49252e2a35a76f81741cbcfd263573e8a0f2034635d230c0c47dc309",
+      "translationHash": "09808cba49252e2a35a76f81741cbcfd263573e8a0f2034635d230c0c47dc309"
+    },
+    {
+      "id": "shared-uncertainIngredients",
+      "sourceHash": "bf8e0f67f3e7b69bda3d51db75e1e791f3076dd48c0b426cbe6f0a01f08bcb9f",
+      "translationHash": "bf8e0f67f3e7b69bda3d51db75e1e791f3076dd48c0b426cbe6f0a01f08bcb9f"
     },
     {
       "id": "shared-research",

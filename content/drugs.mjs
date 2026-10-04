@@ -60,8 +60,8 @@ export const drugClasses = {
     benefit: t('식후혈당 개선, 단독 저혈당 위험 낮음.', 'Improves post-meal glucose with low hypoglycemia risk alone.', 'Cải thiện đường huyết sau ăn, ít hạ đường huyết khi đơn độc.'),
     common: t('가스·복부팽만·설사.', 'Gas, bloating and diarrhea.', 'Đầy hơi, chướng bụng và tiêu chảy.'),
     serious: t('성분에 따라 간기능·장질환 관련 주의가 있습니다. 병용 저혈당 대처에 포도당이 필요합니다.', 'Ingredient-specific liver and intestinal cautions apply. Use glucose to treat combination-related hypoglycemia.', 'Có lưu ý gan và ruột theo hoạt chất. Dùng glucose xử trí hạ đường huyết khi phối hợp.'),
-    lifestyle: t('식사 시작과 관련된 복용법을 제품별로 확인하세요. 아카보스 사용 시 저혈당에는 설탕 대신 포도당.', 'Check meal-related instructions for the product. With acarbose, use glucose, not table sugar, for hypoglycemia.', 'Kiểm tra cách dùng theo bữa của sản phẩm. Với acarbose, xử trí hạ đường huyết bằng glucose, không phải đường ăn.'),
-    low: false, refs: ['medicines', 'acarbose']
+    lifestyle: t('식사 시작과 관련된 복용법을 제품별로 확인하세요. 아카보스·미글리톨 사용 시 저혈당에는 설탕 대신 포도당.', 'Check meal-related instructions for the product. With acarbose or miglitol, use glucose, not table sugar, for hypoglycemia.', 'Kiểm tra cách dùng theo bữa của sản phẩm. Với acarbose hoặc miglitol, xử trí hạ đường huyết bằng glucose, không phải đường ăn.'),
+    low: false, refs: ['medicines', 'acarbose', 'miglitol']
   },
   glp1: {
     name: t('GLP-1 수용체 작용제', 'GLP-1 receptor agonist', 'Thuốc chủ vận thụ thể GLP-1'),
@@ -120,7 +120,7 @@ export const ingredients = [
   d('lobeglitazone', '로베글리타존', 'lobeglitazone', 'tzd'),
   d('acarbose', '아카보스', 'acarbose', 'agi', [], ['acarbose']),
   d('voglibose', '보글리보스', 'voglibose', 'agi'),
-  d('miglitol', '미글리톨', 'miglitol', 'agi'),
+  d('miglitol', '미글리톨', 'miglitol', 'agi', [], ['miglitol']),
   d('semaglutide', '세마글루타이드', 'semaglutide', 'glp1', [], ['semaglutide']),
   d('liraglutide', '리라글루타이드', 'liraglutide', 'glp1'),
   d('dulaglutide', '둘라글루타이드', 'dulaglutide', 'glp1'),
@@ -133,15 +133,21 @@ export const ingredients = [
   d('insulin-lispro', '인슐린 리스프로', 'insulin lispro', 'insulin', ['리스프로', '인슐린리스프로']),
   d('insulin-aspart', '인슐린 아스파트', 'insulin aspart', 'insulin', ['아스파트', '인슐린아스파트']),
   d('insulin-glulisine', '인슐린 글루리신', 'insulin glulisine', 'insulin', ['글루리신', '인슐린글루리신']),
-  d('regular-insulin', '사람 인슐린', 'insulin người', 'insulin', ['휴먼인슐린', 'human insulin', 'insulin human']),
+  d('regular-insulin', '레귤러 사람 인슐린', 'insulin người regular', 'insulin', ['regular human insulin', 'human insulin regular', '레귤러 인슐린', '속효성 사람 인슐린']),
   d('nph-insulin', 'NPH 인슐린', 'insulin NPH', 'insulin', ['nph', 'isophane insulin', '인슐린이소판'])
 ];
 // Non-diabetes ingredients recognized only to expose specific documented interactions.
+// Human insulin identifies a family, not regular/NPH/mixed formulation. Kept outside the 42 specific entries.
+export const uncertainIngredients = [
+  {...d('human-insulin-unspecified', '사람 인슐린 · 제형 확인 필요', 'Insulin người · cần xác nhận dạng', 'insulin', ['사람 인슐린', '휴먼인슐린', 'human insulin', 'insulin human', 'insulin người'], ['humanInsulin']), name: t('사람 인슐린 · 제형 확인 필요', 'Human insulin · formulation unconfirmed', 'Insulin người · cần xác nhận dạng'), uncertain: true}
+];
 export const contextIngredients = [
-  { id: 'gemfibrozil', aliases: ['gemfibrozil', '겜피브로질', '젬피브로질'] },
-  { id: 'clopidogrel', aliases: ['clopidogrel', '클로피도그렐'] }
+  { id: 'gemfibrozil', name: t('겜피브로질', 'Gemfibrozil', 'Gemfibrozil'), aliases: ['gemfibrozil', '겜피브로질', '젬피브로질'] },
+  { id: 'clopidogrel', name: t('클로피도그렐', 'Clopidogrel', 'Clopidogrel'), aliases: ['clopidogrel', '클로피도그렐'] }
 ];
 export const rules = {
+  insulinForm: { title: t('사람 인슐린: 제형 확인 필요', 'Human insulin: confirm the formulation', 'Insulin người: xác nhận dạng thuốc'), text: t('이 이름만으로 레귤러·NPH·혼합 제형을 구분할 수 없습니다. 인슐린 계열의 일반 정보만 표시합니다. 제품명·제형·농도를 약사와 확인하세요. 작용 시간이나 투여 시점을 이 결과로 정하지 마세요.', 'This name alone cannot distinguish regular, NPH or mixed formulations. Only general insulin information is shown. Confirm the product, formulation and concentration with a pharmacist. Do not infer timing or duration from this result.', 'Tên này chưa phân biệt được dạng regular, NPH hay hỗn hợp. Chỉ hiển thị thông tin chung về insulin. Xác nhận sản phẩm, dạng và nồng độ với dược sĩ. Không suy ra thời điểm dùng hoặc thời gian tác dụng từ kết quả này.'), refs: ['humanInsulin'] },
+  miglitol: { title: t('미글리톨: 저혈당에는 포도당', 'Miglitol: use glucose for hypoglycemia', 'Miglitol: dùng glucose khi hạ đường huyết'), text: t('미글리톨을 인슐린·분비촉진제와 함께 쓸 때는 저혈당에 대비하세요. 설탕의 분해가 지연되므로 깨어 있고 삼킬 수 있다면 포도당 정제·젤 등으로 대처합니다. 의식이 없거나 삼키지 못하면 먹이지 말고 응급 도움을 요청하세요.', 'Prepare for hypoglycemia when miglitol is combined with insulin or secretagogues. Sucrose digestion is delayed: use glucose tablets or gel if awake and able to swallow. Do not give anything by mouth if unconscious or unable to swallow; call emergency services.', 'Chuẩn bị xử trí hạ đường huyết khi phối hợp miglitol với insulin hoặc thuốc kích thích tiết insulin. Tiêu hóa sucrose bị chậm: dùng viên hoặc gel glucose khi tỉnh và nuốt được. Không cho ăn uống nếu bất tỉnh hoặc không nuốt được; gọi cấp cứu.'), refs: ['miglitol', 'hypoglycemia'] },
   semaglutide: { title: t('세마글루타이드: 눈·제형 확인', 'Semaglutide: eyes and formulation', 'Semaglutide: mắt và dạng thuốc'), text: t('주사 세마글루타이드 허가사항에는 망막병증 합병증 경고가 있습니다. 기존 망막병증과 급격한 혈당 개선을 의료진과 검토하고 시력 변화를 알리세요. 주사와 먹는 제형의 용법·적응증은 같지 않습니다.', 'Injectable semaglutide labeling includes a retinopathy complication warning. Review existing retinopathy and rapid glucose improvement, and report vision changes. Injectable and oral instructions and indications differ.', 'Nhãn semaglutide tiêm có cảnh báo biến chứng võng mạc. Xem bệnh võng mạc sẵn có, giảm đường huyết nhanh và báo thay đổi thị lực. Cách dùng, chỉ định dạng tiêm và uống khác nhau.'), refs: ['semaglutide', 'medicines'] },
   alogliptin: { title: t('알로글립틴: 심부전 위험 확인', 'Alogliptin: review heart failure risk', 'Alogliptin: xem nguy cơ suy tim'), text: t('미국 허가사항은 심부전 위험군에서 이익·위험을 검토하고 증상을 관찰하도록 합니다. 심부전·신장기능 저하 병력을 알리세요.', 'The US label calls for benefit-risk review and symptom monitoring in people at risk of heart failure. Share any heart failure or kidney impairment history.', 'Nhãn Hoa Kỳ yêu cầu xem lợi ích-nguy cơ và theo dõi triệu chứng ở người nguy cơ suy tim. Báo tiền sử suy tim hoặc suy giảm chức năng thận.'), refs: ['alogliptin'] },
   incomplete: { title: t('확인되지 않은 성분이 있습니다', 'Some ingredients are unverified', 'Có hoạt chất chưa xác định'), text: t('아래 결과는 확인된 성분에 한정됩니다. 결과가 없다는 것은 안전하다는 뜻이 아닙니다. 약봉투의 정확한 성분명을 다시 확인하세요.', 'Results cover recognized ingredients only. No result does not mean safe. Check exact ingredient names on your prescription.', 'Kết quả chỉ gồm hoạt chất nhận diện được. Không có kết quả không có nghĩa an toàn. Kiểm tra tên chính xác trên đơn.'), refs: ['mfds'] },

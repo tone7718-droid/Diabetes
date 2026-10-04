@@ -1,6 +1,8 @@
 // Source IDs are stable; summaries are original educational writing, not copied tables.
 export const reviewed = '2026-10-04';
 export const sources = {
+  humanInsulin: {title: 'DailyMed · Humulin N (insulin isophane human) prescribing information (US)', year: null, type: 'label', url: 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=f6edd793-440b-40c2-96b5-c16133b7a921'},
+  miglitol: {title: 'DailyMed · Miglitol prescribing information (US)', year: null, type: 'label', url: 'https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=b8da2015-d254-2425-e053-2995a90acf0e'},
   kda: { title: '대한당뇨병학회 · 2025 당뇨병 진료지침 (2026-02-12 수정 요약)', year: 2025, type: 'guideline', url: 'https://www.diabetes.or.kr/bbs/?code=guide&mode=view&number=2099' },
   diagnosis: { title: 'ADA · Diagnosis and Classification of Diabetes: Standards of Care 2026', year: 2026, type: 'guideline', url: 'https://doi.org/10.2337/dc26-S002' },
   prevention: { title: 'ADA · Prevention or Delay of Diabetes: Standards of Care 2026', year: 2026, type: 'guideline', url: 'https://doi.org/10.2337/dc26-S003' },

@@ -1,5 +1,9 @@
 import { t } from './book.mjs';
 export const ui = {
+  contextHeading: t('특정 상호작용만 확인하는 성분', 'Ingredients checked for selected interactions only', 'Hoạt chất chỉ kiểm tra một số tương tác'),
+  contextNote: t('아래 성분은 레파글리니드와의 특정 상호작용만 확인합니다. 이 약들의 전체 부작용이나 다른 모든 병용 관계를 평가한 것은 아닙니다.', 'These ingredients are checked only for specific interactions with repaglinide. Their full adverse effects and all other combinations have not been assessed.', 'Các hoạt chất này chỉ được kiểm tra tương tác cụ thể với repaglinide. Chưa đánh giá toàn bộ tác dụng phụ và mọi phối hợp khác.'),
+  cautionLibrary: t('약물 주의사항 찾아보기', 'Browse medicine cautions', 'Tra cứu lưu ý về thuốc'),
+  cautionLibraryNote: t('다음은 검색 가능한 일반 참고자료입니다. 아래 항목 모두가 나에게 해당한다는 뜻은 아닙니다. 입력한 성분에 맞는 안내는 위의 성분 확인 결과에서 보세요.', 'This is a searchable general reference. These cautions do not all apply to you. See the ingredient results above for notices matched to your input.', 'Đây là tài liệu tham khảo chung có thể tìm kiếm. Không phải mọi lưu ý đều áp dụng cho bạn. Xem kết quả hoạt chất phía trên để biết lưu ý phù hợp với nội dung đã nhập.'),
   site: t('혈당과 함께 살아가기', 'Living well with blood glucose', 'Sống khỏe cùng đường huyết'),
   home: t('처음', 'Home', 'Trang chủ'),
   menu: t('목차', 'Contents', 'Mục lục'),
