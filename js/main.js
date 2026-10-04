@@ -1,17 +1,20 @@
 import { analyze } from './drug-engine.mjs';
 import { ingredients, drugClasses, rules } from '../content/drugs.mjs';
 import { sources } from '../content/sources.mjs';
+import { search } from './search.mjs';
 const $=s=>document.querySelector(s), lang=document.body.dataset.lang, base=document.body.dataset.base, page=document.body.dataset.file;
 const ui=JSON.parse($('#ui-text').textContent), pick=v=>v[lang];
 const esc=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const storage={get:k=>{try{return localStorage.getItem(k)}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch{}},remove:k=>{try{localStorage.removeItem(k)}catch{}}};
 document.documentElement.classList.add('enhanced');
 const menu=$('#book-menu'),mb=$('#menu-btn');
-if(menu&&mb){mb.hidden=false;mb.onclick=()=>{mb.setAttribute('aria-expanded',String(menu.classList.toggle('open')))};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.focus()}})}
-const size=$('#font-size'),saved=storage.get('diabetes-font-v2');
-if(['17','20','23'].includes(saved))size.value=saved;
-const setFont=()=>document.documentElement.style.setProperty('--reading-size',size.value+'px');
-setFont();size.onchange=()=>{setFont();storage.set('diabetes-font-v2',size.value)};
+// On phones the contents open as a full-screen panel from the bottom bar; on wide screens the sidebar is always shown.
+const closeMenu=()=>{menu.classList.remove('open');mb.setAttribute('aria-expanded','false')};
+if(menu&&mb){mb.onclick=e=>{if(!matchMedia('(max-width:900px)').matches)return;e.preventDefault();const open=menu.classList.toggle('open');mb.setAttribute('aria-expanded',String(open));if(open)(menu.querySelector('[aria-current="page"]')||menu.querySelector('a')).focus()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){closeMenu();mb.focus()}})}
+const fontGroup=$('.font-size'),fontButtons=[...fontGroup.querySelectorAll('[data-size]')];
+const setFont=id=>{const b=fontButtons.find(x=>x.dataset.size===id)||fontButtons[0];document.documentElement.style.setProperty('--reading-size',b.dataset.px+'px');document.documentElement.dataset.fontSize=b.dataset.size;fontButtons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)))};
+setFont(storage.get('diabetes-font-v3'));fontGroup.hidden=false;
+fontButtons.forEach(b=>b.onclick=()=>{setFont(b.dataset.size);storage.set('diabetes-font-v3',b.dataset.size)});
 let position=null;const pk='diabetes-reading-v2';
 try{const v=JSON.parse(storage.get(pk));if(v&&/^chapter[1-9]\.html$/.test(v.file)&&Number.isFinite(v.y)&&v.y>=0)position=v}catch{}
 if(position){$('#resume').href=position.file+'?resume=1';$('#resume').hidden=false}
@@ -23,7 +26,7 @@ let timer;window.addEventListener('scroll',()=>{progress();clearTimeout(timer);t
 document.querySelectorAll('.languages a').forEach(a=>a.addEventListener('click',()=>{const url=new URL(a.href);url.hash=location.hash;a.href=url.href}));
 $('#print-btn').onclick=async()=>{for(const img of document.images)img.loading='eager';await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));window.print()};
 let searchIndex;
-$('#search-form').onsubmit=async e=>{e.preventDefault();const q=$('#search-query').value.trim().toLocaleLowerCase(lang),target=$('#search-results');target.replaceChildren();if(!q)return;try{searchIndex||=await fetch(base+'assets/search-'+lang+'.json').then(r=>{if(!r.ok)throw Error('search');return r.json()});const found=searchIndex.filter(x=>(x.title+' '+x.text).toLocaleLowerCase(lang).includes(q)).slice(0,30);if(!found.length){target.textContent=ui.noSearch;return}const ul=document.createElement('ul');for(const x of found){const li=document.createElement('li'),a=document.createElement('a');a.href=x.file+'#'+x.id;a.textContent=x.chapter+' · '+x.title;li.append(a);ul.append(li)}target.append(ul)}catch{target.textContent=ui.noSearch}};
+$('#search-form').onsubmit=async e=>{e.preventDefault();const q=$('#search-query').value.trim(),target=$('#search-results');target.replaceChildren();if(!q)return;try{searchIndex||=await fetch(base+'assets/search-'+lang+'.json').then(r=>{if(!r.ok)throw Error('search');return r.json()});const found=search(searchIndex,q,lang);if(!found.length){target.textContent=ui.noSearch;return}const ul=document.createElement('ul');for(const x of found){const li=document.createElement('li'),a=document.createElement('a');a.href=x.file+'#'+x.id;a.textContent=x.chapter+' · '+x.title;li.append(a);ul.append(li)}target.append(ul)}catch{target.textContent=ui.noSearch}};
 const refs=ids=>'<details><summary>'+esc(ui.evidence)+'</summary><ul>'+[...new Set(ids)].map(id=>'<li><a href="'+esc(sources[id].url)+'" target="_blank" rel="noopener noreferrer">'+esc(sources[id].title)+'</a></li>').join('')+'</ul></details>';
 const form=$('#drug-form');
 if(form){

@@ -106,3 +106,53 @@ export const chapters = [
     ]
   }
 ];
+// Three plain-language points shown first in each topic and collected on the summary page.
+// They restate the topic text above; details, exceptions and evidence stay in the sections.
+const keyPoints = {
+  understanding: [
+    t('혈당은 피 속 포도당의 양입니다. 인슐린은 몸이 포도당을 쓰도록 돕습니다.', 'Blood glucose is the amount of glucose in your blood. Insulin helps the body use glucose.', 'Đường huyết là lượng glucose trong máu. Insulin giúp cơ thể sử dụng glucose.'),
+    t('진단 기준(공복혈당 126 mg/dL 이상, HbA1c 6.5% 이상)과 나의 관리 목표는 다릅니다. 목표는 의료진과 함께 정하세요.', 'Diagnostic thresholds (fasting glucose 126 mg/dL or higher, HbA1c 6.5% or higher) are not your personal target. Set your target with your care team.', 'Ngưỡng chẩn đoán (đường huyết đói từ 126 mg/dL, HbA1c từ 6,5% trở lên) khác với mục tiêu riêng của bạn. Hãy cùng bác sĩ đặt mục tiêu.'),
+    t('검사 결과에는 공복·식후·당부하검사 중 무엇이었는지 함께 적어 두세요.', 'Write down whether each test was fasting, after a meal or an oral glucose tolerance test.', 'Ghi lại mỗi lần xét nghiệm là lúc đói, sau ăn hay nghiệm pháp dung nạp glucose.')
+  ],
+  prevention: [
+    t('당뇨병 전단계는 관리를 시작할 기회입니다. 모두가 당뇨병으로 진행하지는 않습니다.', 'Prediabetes is a chance to act. Not everyone with prediabetes develops diabetes.', 'Tiền đái tháo đường là cơ hội để hành động. Không phải ai cũng tiến triển thành đái tháo đường.'),
+    t('과체중이라면 체중의 5–7% 감량과 주 150분 걷기 같은 활동을 목표로 조금씩 늘려 보세요.', 'If you are overweight, work gradually toward losing 5–7% of your weight and about 150 minutes of activity such as walking each week.', 'Nếu thừa cân, hãy dần hướng tới giảm 5–7% cân nặng và khoảng 150 phút vận động như đi bộ mỗi tuần.'),
+    t('적어도 1년에 한 번은 혈당 검사를 받으세요.', 'Have your glucose checked at least once a year.', 'Kiểm tra đường huyết ít nhất mỗi năm một lần.')
+  ],
+  medicines: [
+    t('약봉투·처방전을 사진으로 찍어 두고, 제품명 옆의 성분명을 확인하세요.', 'Take a photo of your medicine bag or prescription, and check the ingredient names next to the product names.', 'Chụp ảnh túi thuốc hoặc đơn thuốc và xem tên hoạt chất bên cạnh tên sản phẩm.'),
+    t('감기약·진통제·한약·건강기능식품을 새로 먹기 전에 약사에게 “당뇨약을 먹고 있어요”라고 알리세요.', 'Before starting cold medicine, painkillers, herbal remedies or supplements, tell the pharmacist that you take diabetes medicine.', 'Trước khi dùng thuốc cảm, thuốc giảm đau, thuốc nam, thuốc bắc hoặc thực phẩm bổ sung, hãy nói với dược sĩ rằng bạn đang dùng thuốc đái tháo đường.'),
+    t('수치가 좋아지거나 아파서 못 먹을 때도 약을 스스로 끊거나 바꾸지 마세요. 그럴 때의 계획을 의료진·약사에게 미리 물어 두세요.', 'Do not stop or change medicines yourself when readings improve or when you cannot eat. Ask your care team or pharmacist for a plan in advance.', 'Không tự ngừng hoặc đổi thuốc khi chỉ số tốt hơn hay khi không ăn được. Hãy hỏi trước bác sĩ hoặc dược sĩ về kế hoạch cho những lúc đó.')
+  ],
+  food: [
+    t('밥·면을 모두 끊을 필요는 없습니다. 접시의 절반은 녹말이 적은 채소, 4분의 1은 단백질, 4분의 1은 밥·면으로 시작해 보세요.', 'You do not need to give up rice or noodles. Start with a plate that is half non-starchy vegetables, one quarter protein and one quarter rice or noodles.', 'Không cần bỏ hẳn cơm hay bún, phở. Hãy bắt đầu với đĩa ăn gồm một nửa rau ít tinh bột, một phần tư chất đạm và một phần tư cơm hoặc bún, phở.'),
+    t('단 음료와 과일주스를 줄이고, 과일은 통째로 적당한 양을 드세요.', 'Cut down on sugary drinks and fruit juice; eat whole fruit in suitable portions.', 'Giảm nước ngọt và nước ép trái cây; ăn trái cây nguyên quả với lượng vừa phải.'),
+    t('식단을 크게 바꾸기 전에는 약과 혈당 측정 계획을 의료진과 먼저 정하세요.', 'Before making big changes to what you eat, agree on medicine and glucose-checking plans with your care team.', 'Trước khi thay đổi lớn chế độ ăn, hãy thống nhất kế hoạch thuốc và đo đường huyết với bác sĩ.')
+  ],
+  habits: [
+    t('매일 같은 시간에 일어나는 등 잠을 규칙적으로 하세요. 심한 코골이·낮 졸림은 진료 때 알리세요.', 'Keep regular sleep, such as waking at the same time each day. Mention loud snoring or daytime sleepiness at your visit.', 'Ngủ đều đặn, ví dụ thức dậy cùng giờ mỗi ngày. Báo bác sĩ nếu ngáy to hoặc buồn ngủ ban ngày.'),
+    t('술은 다음 날까지 저혈당을 일으킬 수 있습니다. 저혈당을 일으킬 수 있는 약(인슐린·설폰요소제 등)을 쓴다면 빈속에 마시지 마세요.', 'Alcohol can cause low glucose as late as the next day. If you use medicines that can cause low glucose (such as insulin or sulfonylureas), do not drink on an empty stomach.', 'Rượu có thể gây hạ đường huyết đến tận hôm sau. Nếu dùng thuốc có thể gây hạ đường huyết (như insulin hoặc sulfonylurea), đừng uống rượu lúc đói.'),
+    t('혈당은 성적표가 아닙니다. 이번 주에 할 작은 행동 하나를 정하고, 금연이 필요하면 도움을 요청하세요.', 'Glucose is not a grade. Choose one small action for this week, and ask for help to quit smoking if needed.', 'Đường huyết không phải bảng điểm. Hãy chọn một việc nhỏ cho tuần này và nhờ hỗ trợ bỏ thuốc lá nếu cần.')
+  ],
+  exercise: [
+    t('식후 10분 편하게 걷기부터 시작하고, 오래 앉아 있다면 30분마다 잠깐 움직이세요.', 'Start with a comfortable ten-minute walk after meals, and get up briefly about every 30 minutes when sitting for long periods.', 'Bắt đầu bằng đi bộ thoải mái mười phút sau ăn và đứng dậy vận động một chút khoảng mỗi 30 phút khi ngồi lâu.'),
+    t('목표는 주 150분 중강도 활동과 주 2–3회 근력운동입니다. 지금보다 조금씩 늘리면 됩니다.', 'The goal is 150 minutes of moderate activity and strength exercise 2–3 times a week. Increase little by little from where you are now.', 'Mục tiêu là 150 phút vận động mức vừa và tập sức mạnh 2–3 lần mỗi tuần. Tăng dần từ mức hiện tại.'),
+    t('저혈당을 일으킬 수 있는 약을 쓴다면 포도당을 챙기세요. 가슴 통증·심한 어지러움·숨참이 있으면 바로 멈추세요.', 'If you use medicines that can cause low glucose, carry rapid glucose. Stop right away if you have chest pain, severe dizziness or trouble breathing.', 'Nếu dùng thuốc có thể gây hạ đường huyết, hãy mang theo glucose. Dừng ngay nếu đau ngực, chóng mặt nặng hoặc khó thở.')
+  ],
+  safety: [
+    t('혈당이 70 mg/dL 미만이고 깨어 있어 삼킬 수 있다면 포도당 약 15g을 먹고 15분 뒤 다시 재세요. 여전히 낮으면 반복합니다.', 'If glucose is below 70 mg/dL and the person is awake and can swallow, take about 15 g of rapid glucose and recheck after 15 minutes. Repeat if still low.', 'Nếu đường huyết dưới 70 mg/dL và người bệnh tỉnh, nuốt được, hãy dùng khoảng 15 g glucose rồi đo lại sau 15 phút. Lặp lại nếu vẫn thấp.'),
+    t('의식이 없거나 삼키지 못하면 아무것도 먹이지 말고 바로 응급 도움을 요청하세요(한국 119, 베트남 115).', 'If the person is unconscious or cannot swallow, give nothing by mouth and call emergency services right away (119 in Korea, 115 in Vietnam).', 'Nếu bất tỉnh hoặc không nuốt được, không cho ăn uống gì và gọi cấp cứu ngay (115 tại Việt Nam, 119 tại Hàn Quốc).'),
+    t('심한 구토·복통·빠른 호흡이 있으면 혈당 숫자만 보고 기다리지 말고 바로 진료를 받으세요.', 'With severe vomiting, abdominal pain or fast breathing, get care promptly; do not wait based on the glucose number alone.', 'Khi nôn nhiều, đau bụng hoặc thở nhanh, hãy đi khám ngay; đừng chỉ dựa vào con số đường huyết mà chờ đợi.')
+  ],
+  feet: [
+    t('매일 발등·발바닥·발가락 사이를 살펴보세요. 발바닥은 거울이나 가족의 도움을 받으세요.', 'Check the tops, soles and between the toes every day. Use a mirror or ask family to help with the soles.', 'Mỗi ngày xem mu bàn chân, lòng bàn chân và kẽ ngón. Dùng gương hoặc nhờ người nhà xem lòng bàn chân.'),
+    t('아프지 않아도 새 상처·물집·붉어짐·부기가 보이면 빨리 진료받으세요.', 'Even if it does not hurt, get a new wound, blister, redness or swelling checked promptly.', 'Dù không đau, hãy đi khám sớm khi có vết thương mới, phồng rộp, đỏ hoặc sưng.'),
+    t('맨발로 걷지 말고, 뜨거운 찜질·족욕이나 티눈·굳은살 직접 제거는 피하세요.', 'Do not walk barefoot, and avoid hot packs, hot foot baths and removing corns or calluses yourself.', 'Không đi chân trần; tránh chườm nóng, ngâm chân nước nóng và tự cắt bỏ chai chân.')
+  ],
+  supplements: [
+    t('건강기능식품은 당뇨약을 대신하지 않습니다.', 'Supplements do not replace diabetes medicines.', 'Thực phẩm bổ sung không thay thế thuốc đái tháo đường.'),
+    t('‘완치’나 ‘약을 끊을 수 있다’고 약속하는 광고는 피하세요.', 'Avoid advertisements that promise a cure or say you can stop your medicines.', 'Tránh quảng cáo hứa chữa khỏi bệnh hoặc giúp ngừng thuốc.'),
+    t('먹고 있거나 먹으려는 제품은 성분·함량을 진료 때 보여주세요. 콩팥 기능이 나쁘면 특히 중요합니다.', 'Show the ingredients and strengths of products you take or plan to take at your visit, especially if you have kidney problems.', 'Mang thông tin hoạt chất và hàm lượng của sản phẩm đang hoặc định dùng khi đi khám, nhất là khi có bệnh thận.')
+  ]
+};
+for (const chapter of chapters) chapter.key = keyPoints[chapter.id];
