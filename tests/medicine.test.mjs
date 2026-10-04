@@ -15,6 +15,36 @@ test('units per ml and English salt are parsed without guessing a dose',()=>{
   assert.equal(analyze('insulin glargine 100U/ml').recognized[0].id,'insulin-glargine');
   assert.equal(analyze('Metformin hydrochloride (500 mg) XR').recognized[0].id,'metformin');
 });
+test('thousands separators are not treated as ingredient separators',()=>{
+  for(const input of ['메트포르민 1,000mg','metformin 1,000 mg','Metformin 1,000mg, sitagliptin 50mg']){
+    const r=analyze(input);assert.equal(r.recognized[0]?.id,'metformin',input);assert.equal(r.unknown.length,0,input);
+  }
+  assert.deepEqual(analyze('metformin 500mg, sitagliptin 50mg').recognized.map(x=>x.id),['metformin','sitagliptin']);
+});
+test('Korean tablet suffixes, salt forms and attached strengths are recognized',()=>{
+  const expected={'메트포르민정':'metformin','글리메피리드정 2mg':'glimepiride','glimepiride 2mg tab':'glimepiride','metformin500mg':'metformin',
+    '피오글리타존염산염':'pioglitazone','알로글립틴벤조산염':'alogliptin','로베글리타존황산염':'lobeglitazone','미티글리니드칼슘수화물':'mitiglinide',
+    '제미글립틴타르타르산염세스퀴수화물':'gemigliptin','에보글립틴타르타르산염정':'evogliptin','테네리글립틴브롬화수소산염수화물':'teneligliptin',
+    '이프라글리플로진L-프롤린':'ipragliflozin','saxagliptin hydrochloride':'saxagliptin','alogliptin benzoate':'alogliptin'};
+  for(const [input,id] of Object.entries(expected)){const r=analyze(input);assert.equal(r.recognized[0]?.id,id,input);assert.equal(r.unknown.length,0,input)}
+});
+test('suffix stripping never turns an unknown word into a medicine',()=>{
+  for(const input of ['칼슘','염산염','정','tab','metforminx정','자누메트정'])assert.equal(analyze(input).recognized.length,0,input);
+  assert.equal(analyze('칼슘').unknown.length,1);
+});
+test('space-separated ingredients are split only when every word group is a known name',()=>{
+  assert.deepEqual(analyze('메트포르민 시타글립틴').recognized.map(x=>x.id),['metformin','sitagliptin']);
+  assert.deepEqual(analyze('insulin glargine insulin aspart').recognized.map(x=>x.id),['insulin-glargine','insulin-aspart']);
+  const r=analyze('metformin imaginarydrug');assert.equal(r.recognized.length,0);assert.equal(r.unknown[0].input,'metformin imaginarydrug');
+});
+test('concentrations and strength-only fragments do not raise an unknown-ingredient warning',()=>{
+  for(const [input,id] of [['insulin glargine 300 units/mL','insulin-glargine'],['인슐린 글라진 100단위/mL','insulin-glargine'],['Semaglutide 0.25mg/0.5mL','semaglutide'],['시타글립틴/메트포르민 50/500mg','sitagliptin']]){
+    const r=analyze(input);assert.equal(r.recognized[0]?.id,id,input);assert.equal(r.unknown.length,0,input);assert.ok(!r.ruleIds.includes('incomplete'),input);
+  }
+});
+test('no alias contains a digit, because strengths are removed before matching',()=>{
+  for(const d of ingredients)for(const alias of d.aliases)assert.ok(!/\d/.test(alias),alias);
+});
 test('duplicate alias does not generate duplicate medicine cards',()=>{
   const r=analyze('metformin + 메트포르민');assert.equal(r.recognized.length,1);assert.ok(r.ruleIds.includes('duplicate'));
 });
