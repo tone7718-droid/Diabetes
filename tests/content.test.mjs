@@ -19,7 +19,7 @@ test('chapter sections and images use existing source IDs',()=>{
   for(const c of chapters){assert.ok(fs.existsSync(path.join(root,'assets/illustrations',c.image+'.jpg')));assert.equal(new Set(c.sections.map(s=>s.id)).size,c.sections.length);for(const s of c.sections){assert.ok(s.refs.length);for(const id of s.refs)assert.ok(sources[id],id)}}
 });
 test('all generated local resources and anchor targets exist',()=>{
-  const files=walk(root).filter(p=>p.endsWith('.html'));assert.equal(files.length,52);
+  const files=walk(root).filter(p=>p.endsWith('.html'));assert.equal(files.length,56);
   for(const file of files){const html=fs.readFileSync(file,'utf8');const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);assert.equal(ids.length,new Set(ids).size,'Duplicate IDs in '+file);
     for(const match of html.matchAll(/(?:href|src)="([^"]+)"/g)){const target=match[1];if(/^https?:|^mailto:/.test(target))continue;const [name,hash]=target.split('#');const dest=name?path.resolve(path.dirname(file),name.split('?')[0]):file;assert.ok(fs.existsSync(dest),file+' -> '+target);if(hash&&dest.endsWith('.html'))assert.ok(fs.readFileSync(dest,'utf8').includes('id="'+hash+'"'),file+' -> '+target)}
   }
