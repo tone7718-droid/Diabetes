@@ -4,7 +4,8 @@
 
 ## 읽기
 
-- 한국어: `index.html` 또는 `ko/index.html` (기존 `chapter1~6.html` 주소 유지)
+- 한국어: `index.html` 또는 `ko/index.html`
+- 주제 페이지는 주제 이름을 파일명으로 씁니다(`understanding.html`, `prevention.html`, `medicine-basics.html`, `food.html`, `habits.html`, `exercise.html`, `safety.html`, `feet.html`, `supplements.html`). 예전 `chapter1~9.html` 주소는 새 주소로 자동 이동합니다.
 - English: `en/index.html`
 - Tiếng Việt: `vi/index.html`
 - 전체 책: 각 언어의 `book.html` → 인쇄 / PDF 저장
@@ -30,18 +31,20 @@
 Node.js 22 이상. 외부 npm 의존성이나 API 키가 필요하지 않습니다.
 
 ```sh
-npm run build
-npm test
-npm run serve
+npm test          # 빌드 후 시험 (pretest가 빌드를 먼저 실행)
+npm run serve     # 저장소 전체를 http://127.0.0.1:4173 에서 확인
+node scripts/serve.mjs dist   # 실제 배포되는 dist/만 확인
 ```
 
-`http://127.0.0.1:4173`에서 확인합니다. 생성 HTML은 저장소에 포함되어 있고, EPUB은 빌드할 때 생성합니다. `downloads/`는 Git에 포함하지 않습니다.
+생성 HTML은 저장소에 포함되어 있습니다. EPUB(`downloads/`)과 배포 폴더(`dist/`)는 빌드할 때 만들며 Git에 포함하지 않습니다.
 
 원문은 `content/`에서 수정하고 빌드하세요. 생성 HTML을 직접 수정하면 다음 빌드에서 덮어씁니다. 번역 지문·근거·이미지 관리 방법은 [docs/EDITORIAL.md](docs/EDITORIAL.md)를 참고하세요. CI가 빌드·시험·생성물 변경 여부를 확인합니다.
 
 ## Vercel
 
-Framework: Other. Build: `npm run build`. Output: `.`. `vercel.json`에 설정이 포함되어 있습니다. 빌드가 EPUB 다운로드 파일을 만듭니다. 정적 파일만 서비스하며 외부 AI·건강 데이터 서버가 없습니다.
+Framework: Other. Build: `npm run build`. Output: `dist`. `vercel.json`에 설정이 포함되어 있습니다. `dist/`에는 브라우저에 필요한 파일만 복사되고, 빌드 스크립트·시험·문서·번역 검토 기록은 공개되지 않습니다. 정적 파일만 서비스하며 외부 AI·건강 데이터 서버가 없습니다.
+
+검색엔진용 대표 주소(canonical)와 언어별 주소(hreflang)는 절대 주소가 필요해서 빌드 때 사이트 주소를 읽습니다. Vercel 빌드에서는 `VERCEL_PROJECT_PRODUCTION_URL`을 자동으로 사용합니다. 직접 정한 도메인을 쓰려면 Vercel 환경 변수 `SITE_URL`(예: `https://example.org`)을 지정하세요. 주소가 없으면 이 링크를 넣지 않습니다(저장소의 생성 HTML이 이 경우입니다).
 
 ## 근거와 범위
 

@@ -1,46 +1,46 @@
 {
   "understanding": {
-    "sourceHash": "df6964b8cccb98b0987e96c541cf8455b905e345a3a8fc93ea6f5a2bb56a6af3",
+    "sourceHash": "67ae9a53f5b2ea14c01513fc66a45e466820ff8e117f63d0a1641b02e2beeae3",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "prevention": {
-    "sourceHash": "eb9105c0bcc7eda38f5a963bdfae77bbbcd33d6e238fbffa0a3dd5015ce0b5b7",
+    "sourceHash": "30101a96b73d87adff510e37a535514636f24e62a6d82782eb1811cfbd62cc78",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "medicines": {
-    "sourceHash": "f501be1a070df94b913d01f76e1adbe6ddb9299fed3dce7886b2f9836d36ee3e",
+    "sourceHash": "748d7d2c7720aa83659ce85aed1cc2955692ed61d1c3f33e480bb117679832d4",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "food": {
-    "sourceHash": "42f52798c7da4b39874a0f09527b5f35f7343f1989d068cc37d1b719c92bd0cf",
+    "sourceHash": "a9146ed18208deae14ffe47b679e671a55ea23a67c0d92dcccb203a447d4d03c",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "habits": {
-    "sourceHash": "3ee9b3640f6a2df1c888f960011c8c9b7786993b7735608766d2332be9937010",
+    "sourceHash": "3da741e16ec1e2c8206967be61bdc8b353a16e672d9f22171128844eef41a9c8",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "exercise": {
-    "sourceHash": "92ee957e2c88b30b4a3fa422dee4ea9b41591d3db59c12f39ff4e5d81594b83d",
+    "sourceHash": "e6029dd2383edcc7d97345e5653d387b56a2a137418aaeb0dfe620c4ea8cd27c",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "safety": {
-    "sourceHash": "a98622b07cfb41463618889cb13d8428ce69373907f8c6a6bf671af9e5f4a411",
+    "sourceHash": "a69eb32f57eb7f8e915f8d1c336a02e5d545288e52f423179f8d6c22f10d3d40",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "feet": {
-    "sourceHash": "0734ec1278087217d962a1491288ac451ae8485cda650ab66e0984e50b4e2269",
+    "sourceHash": "7fe6283648e828d0b57c3acc5739443a4b671fb5b48387fef7e91e347fd11a81",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },
   "supplements": {
-    "sourceHash": "6cb931a4a607c7e5257c0c61eca3eeb314d6e4c71d0b3a049080f86ae75335ed",
+    "sourceHash": "51c4753e1aa17efa9272d3adba8a086756d285bfe2a24faf83b5ee6c4a822e2a",
     "reviewed": "2026-10-04",
     "status": "educational-draft"
   },

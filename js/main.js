@@ -15,12 +15,12 @@ const fontGroup=$('.font-size'),fontButtons=[...fontGroup.querySelectorAll('[dat
 const setFont=id=>{const b=fontButtons.find(x=>x.dataset.size===id)||fontButtons[0];document.documentElement.style.setProperty('--reading-size',b.dataset.px+'px');document.documentElement.dataset.fontSize=b.dataset.size;fontButtons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)))};
 setFont(storage.get('diabetes-font-v3'));fontGroup.hidden=false;
 fontButtons.forEach(b=>b.onclick=()=>{setFont(b.dataset.size);storage.set('diabetes-font-v3',b.dataset.size)});
-let position=null;const pk='diabetes-reading-v2';
-try{const v=JSON.parse(storage.get(pk));if(v&&/^chapter[1-9]\.html$/.test(v.file)&&Number.isFinite(v.y)&&v.y>=0)position=v}catch{}
+let position=null;const pk='diabetes-reading-v3',isChapter=document.body.dataset.kind==='chapter',validFile=/^[a-z][a-z-]*\.html$/;
+try{const v=JSON.parse(storage.get(pk));if(v&&validFile.test(v.file)&&Number.isFinite(v.y)&&v.y>=0)position=v}catch{}
 if(position){$('#resume').href=position.file+'?resume=1';$('#resume').hidden=false}
 $('#clear-resume').onclick=()=>{storage.remove(pk);position=null;$('#resume').hidden=true};
 if(position&&position.file===page&&new URLSearchParams(location.search).has('resume'))window.addEventListener('load',()=>setTimeout(()=>scrollTo({top:position.y,behavior:'instant'}),50));
-const save=()=>{if(/^chapter[1-9]\.html$/.test(page))storage.set(pk,JSON.stringify({file:page,y:Math.round(scrollY)}))};
+const save=()=>{if(isChapter)storage.set(pk,JSON.stringify({file:page,y:Math.round(scrollY)}))};
 const progress=()=>{const max=document.documentElement.scrollHeight-innerHeight;$('#progress').style.width=(max>0?Math.max(0,Math.min(100,scrollY/max*100)):0)+'%'};
 let timer;window.addEventListener('scroll',()=>{progress();clearTimeout(timer);timer=setTimeout(save,400)},{passive:true});window.addEventListener('resize',progress);window.addEventListener('pagehide',save);progress();
 document.querySelectorAll('.languages a').forEach(a=>a.addEventListener('click',()=>{const url=new URL(a.href);url.hash=location.hash;a.href=url.href}));

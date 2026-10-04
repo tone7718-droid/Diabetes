@@ -2,7 +2,7 @@ export const t = (ko, en, vi) => ({ ko, en, vi });
 const s = (id, title, paragraphs, actions, caution, refs) => ({ id, title, paragraphs, actions, caution, refs });
 export const chapters = [
   {
-    id: 'understanding', file: 'chapter1.html', image: 'understanding', emoji: '🩸',
+    id: 'understanding', file: 'understanding.html', oldFile: 'chapter1.html', image: 'understanding', emoji: '🩸',
     title: t('당뇨병, 몸속에서 무슨 일이 생길까요?', 'Diabetes: what happens inside the body?', 'Đái tháo đường: điều gì xảy ra trong cơ thể?'),
     summary: t('혈당·인슐린·검사 수치를 이해하는 첫걸음.', 'Understand glucose, insulin and your test results.', 'Hiểu đường huyết, insulin và kết quả xét nghiệm.'),
     caption: t('인슐린은 근육과 지방세포의 포도당 이용을 돕습니다. 열쇠 비유는 이해를 돕는 그림이며, 모든 세포가 같은 방식으로 작동하지는 않습니다.', 'Insulin helps muscle and fat cells use glucose. The key is a teaching analogy; not all cells use this pathway.', 'Insulin giúp tế bào cơ và mỡ sử dụng glucose. Hình chìa khóa chỉ là ví dụ; không phải mọi tế bào đều dùng cơ chế này.'),
@@ -13,7 +13,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'prevention', file: 'chapter8.html', image: 'prevention', emoji: '🌱',
+    id: 'prevention', file: 'prevention.html', oldFile: 'chapter8.html', image: 'prevention', emoji: '🌱',
     title: t('당뇨병 전단계, 지금 시작할 관리', 'Prediabetes: begin with achievable changes', 'Tiền đái tháo đường: bắt đầu từ thay đổi khả thi'),
     summary: t('예방·체중·재검사를 한 번에 정리합니다.', 'Prevention, weight and follow-up tests.', 'Phòng ngừa, cân nặng và xét nghiệm theo dõi.'),
     caption: t('가족과 함께 작은 행동을 정하고 검사로 경과를 확인합니다. 마른 사람도 전단계가 생길 수 있습니다.', 'Plan small changes with family and follow progress with tests. Lean people can also have prediabetes.', 'Cùng gia đình đặt thay đổi nhỏ và theo dõi bằng xét nghiệm. Người gầy cũng có thể mắc tiền đái tháo đường.'),
@@ -24,7 +24,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'medicines', file: 'chapter2.html', image: 'medicines', emoji: '💊',
+    id: 'medicines', file: 'medicine-basics.html', oldFile: 'chapter2.html', image: 'medicines', emoji: '💊',
     title: t('내 당뇨약의 원리와 주의점', 'Understand your diabetes medicines', 'Hiểu cơ chế và lưu ý của thuốc đái tháo đường'),
     summary: t('성분·작용기전·기대 이익·부작용을 함께 봅니다.', 'Ingredients, mechanisms, benefits and adverse effects.', 'Hoạt chất, cơ chế, lợi ích và tác dụng không mong muốn.'),
     caption: t('약은 간·췌장·장·콩팥 등 서로 다른 경로에 작용합니다. 한 알에 성분이 여러 개 들어 있는 복합제도 있습니다.', 'Medicines act through different pathways in the liver, pancreas, gut and kidneys. A combination tablet contains more than one ingredient.', 'Thuốc tác động qua các đường khác nhau ở gan, tụy, ruột và thận. Một viên phối hợp chứa nhiều hoạt chất.'),
@@ -35,7 +35,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'food', file: 'chapter7.html', image: 'food', emoji: '🥗',
+    id: 'food', file: 'food.html', oldFile: 'chapter7.html', image: 'food', emoji: '🥗',
     title: t('식단, 무엇을 얼마나 먹을까요?', 'Food: what and how much to eat?', 'Ăn gì và ăn bao nhiêu?'),
     summary: t('금지 목록 대신 양·구성·지속 가능한 선택을 익힙니다.', 'Learn portions and sustainable choices instead of a forbidden-food list.', 'Hiểu khẩu phần và lựa chọn bền vững thay vì danh sách cấm.'),
     caption: t('접시의 절반은 비전분 채소, 4분의 1은 단백질, 나머지는 탄수화물 식품으로 시작할 수 있습니다. 개인별 필요량은 다릅니다.', 'A starting plate can be half nonstarchy vegetables, one quarter protein and one quarter carbohydrate foods. Individual needs differ.', 'Có thể bắt đầu với nửa đĩa rau ít tinh bột, một phần tư đạm và một phần tư thực phẩm chứa carbohydrate. Nhu cầu mỗi người khác nhau.'),
@@ -47,7 +47,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'habits', file: 'chapter4.html', image: 'habits', emoji: '🌙',
+    id: 'habits', file: 'habits.html', oldFile: 'chapter4.html', image: 'habits', emoji: '🌙',
     title: t('수면·스트레스·술과 담배', 'Sleep, stress, alcohol and smoking', 'Giấc ngủ, căng thẳng, rượu và thuốc lá'),
     summary: t('작은 습관을 생활에 연결합니다.', 'Build small habits into daily life.', 'Gắn thói quen nhỏ vào cuộc sống hằng ngày.'),
     caption: t('걷기와 규칙적인 수면은 일상 관리의 일부입니다. 혈당 변화는 약·식사·질병 등 여러 요인의 영향을 받습니다.', 'Walking and regular sleep are part of daily care. Glucose also depends on medication, meals, illness and other factors.', 'Đi bộ và ngủ đều đặn là một phần chăm sóc. Đường huyết còn phụ thuộc thuốc, bữa ăn, bệnh và yếu tố khác.'),
@@ -58,7 +58,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'exercise', file: 'chapter5.html', image: 'exercise', emoji: '🚶',
+    id: 'exercise', file: 'exercise.html', oldFile: 'chapter5.html', image: 'exercise', emoji: '🚶',
     title: t('걷기와 근력운동, 안전하게 시작하기', 'Start walking and strength exercise safely', 'Bắt đầu đi bộ và tập sức mạnh an toàn'),
     summary: t('적은 양부터 늘리고 복약·발 상태를 함께 확인합니다.', 'Start small and consider medicines and foot health.', 'Bắt đầu ít và chú ý thuốc cùng tình trạng bàn chân.'),
     caption: t('걷기와 의자에서 일어나기는 시작 예시입니다. 통증·균형·합병증에 따라 지지와 강도를 조절하세요.', 'Walking and chair sit-to-stand are starting examples. Adjust support and intensity for pain, balance and complications.', 'Đi bộ và đứng lên từ ghế là ví dụ khởi đầu. Điều chỉnh hỗ trợ, mức tập theo đau, thăng bằng và biến chứng.'),
@@ -70,7 +70,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'safety', file: 'chapter6.html', image: 'safety', emoji: '🧭',
+    id: 'safety', file: 'safety.html', oldFile: 'chapter6.html', image: 'safety', emoji: '🧭',
     title: t('저혈당·아픈 날·검사 실전 가이드', 'Low glucose, sick days and monitoring', 'Hạ đường huyết, ngày bị bệnh và theo dõi'),
     summary: t('가족과 함께 읽어둘 대처와 진료 준비.', 'Actions and visit preparation to review with family.', 'Xử trí và chuẩn bị khám nên đọc cùng gia đình.'),
     caption: t('저혈당 때 당분을 먹는 대처는 의식이 있고 안전하게 삼킬 수 있을 때만 적용합니다. 그림의 정제 개수는 용량을 뜻하지 않습니다.', 'Oral glucose is only for someone awake and able to swallow safely. The illustrated tablet count is not a dose.', 'Chỉ cho glucose uống khi người bệnh tỉnh và nuốt an toàn. Số viên trong hình không biểu thị liều.'),
@@ -82,7 +82,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'feet', file: 'chapter9.html', image: 'feet', emoji: '🦶',
+    id: 'feet', file: 'feet.html', oldFile: 'chapter9.html', image: 'feet', emoji: '🦶',
     title: t('당뇨발과 합병증, 작은 신호 알아차리기', 'Feet and complications: notice small warning signs', 'Bàn chân và biến chứng: nhận biết dấu hiệu nhỏ'),
     summary: t('감각·혈류·상처와 매일의 발 확인.', 'Sensation, circulation, wounds and daily checks.', 'Cảm giác, tuần hoàn, vết thương và kiểm tra mỗi ngày.'),
     caption: t('신경 손상은 감각을 둔하게 해 작은 상처를 놓치게 할 수 있습니다. 발바닥은 거울로 확인하세요. 그림의 상처는 예시이며 사진만으로 진단할 수 없습니다.', 'Nerve damage can reduce sensation, making a small wound easy to miss. Check soles with a mirror. The wound is illustrative, not a diagnosis from an image.', 'Tổn thương thần kinh có thể giảm cảm giác khiến bỏ sót vết thương nhỏ. Dùng gương xem lòng bàn chân. Vết thương chỉ là minh họa, không dùng hình để chẩn đoán.'),
@@ -94,7 +94,7 @@ export const chapters = [
     ]
   },
   {
-    id: 'supplements', file: 'chapter3.html', image: 'supplements', emoji: '🔎',
+    id: 'supplements', file: 'supplements.html', oldFile: 'chapter3.html', image: 'supplements', emoji: '🔎',
     title: t('건강기능식품, 근거를 구분해서 보기', 'Supplements: separate evidence from promises', 'Thực phẩm bổ sung: phân biệt bằng chứng và lời hứa'),
     summary: t('혈당 개선·결핍 교정·신경 증상은 다른 목표입니다.', 'Glucose lowering, deficiency correction and nerve symptoms are different goals.', 'Hạ đường huyết, sửa thiếu chất và triệu chứng thần kinh là mục tiêu khác nhau.'),
     caption: t('논문이 있다는 사실만으로 제품의 효과가 확정되지는 않습니다. 복용 중인 약과 함께 검토하세요.', 'The existence of a study does not establish a product’s benefit. Review supplements alongside your medicines.', 'Có nghiên cứu không đồng nghĩa hiệu quả sản phẩm đã được xác nhận. Xem xét bổ sung cùng các thuốc đang dùng.'),
@@ -156,3 +156,16 @@ const keyPoints = {
   ]
 };
 for (const chapter of chapters) chapter.key = keyPoints[chapter.id];
+// Short descriptions of what each illustration shows, read by screen readers instead of repeating the caption.
+const imageAlt = {
+  understanding: t('안경 쓴 중년 여성이 혈당측정기를 들고 간호사의 설명을 듣는 장면. 옆에 열쇠가 근육 세포의 문을 열어 포도당 알갱이가 들어가는 그림.', 'A middle-aged woman with glasses holds a glucose meter and listens to a nurse. Beside them, a key opens a door on a muscle cell so glucose particles can enter.', 'Người phụ nữ trung niên đeo kính cầm máy đo đường huyết và nghe điều dưỡng giải thích. Bên cạnh là hình chiếc chìa khóa mở cửa tế bào cơ để các hạt glucose đi vào.'),
+  prevention: t('여성이 의사와 마주 앉아 노트에 계획을 적는 장면. 옆에 가족이 함께 공원을 걷는 모습과 채소 바구니.', 'The woman sits with a doctor who writes a plan in a notebook. Beside them, her family walks together in a park, and there is a basket of vegetables.', 'Người phụ nữ ngồi cùng bác sĩ đang ghi kế hoạch vào sổ. Bên cạnh là gia đình cùng đi bộ trong công viên và một giỏ rau.'),
+  medicines: t('여성이 약사와 요일별 약 정리함을 함께 보는 장면. 옆에 간·콩팥·췌장·장 그림.', 'The woman and a pharmacist look at a weekly pill organizer together. Beside them are drawings of the liver, kidneys, pancreas and intestines.', 'Người phụ nữ cùng dược sĩ xem hộp chia thuốc theo ngày. Bên cạnh là hình gan, thận, tụy và ruột.'),
+  food: t('여성이 식탁에서 채소 절반, 연어와 두부, 잡곡밥이 담긴 접시로 식사하는 장면. 주변에 국, 나물, 쌈 채소, 월남쌈과 물 한 잔.', 'The woman eats from a plate with half vegetables, salmon and tofu, and mixed-grain rice. Around it are soup, vegetable side dishes, lettuce for wraps, fresh spring rolls and a glass of water.', 'Người phụ nữ ăn đĩa gồm một nửa rau, cá hồi và đậu phụ, cơm gạo lứt trộn. Xung quanh có canh, rau trộn, rau cuốn, gỏi cuốn và một ly nước.'),
+  habits: t('여성이 해 질 녘 강변을 걷는 장면과, 휴대전화를 내려놓고 편안히 잠자리에 드는 장면.', 'The woman walks by a river at sunset, and settles comfortably into bed with her phone set aside.', 'Người phụ nữ đi dạo bên sông lúc hoàng hôn, và thoải mái đi ngủ với điện thoại để sang một bên.'),
+  exercise: t('여성이 운동복을 입고 강변을 걷는 장면과, 의자에서 일어나는 근력운동 장면.', 'The woman walks along a riverside path in exercise clothes, and does a sit-to-stand exercise from a chair.', 'Người phụ nữ mặc đồ tập đi bộ ven sông, và tập đứng lên từ ghế.'),
+  safety: t('식탁에 앉은 여성이 식은땀을 흘리며 떨고, 가족이 포도당 정제를 건네는 장면. 식탁 위에 물 한 잔, 혈당측정기, 시계.', 'The woman sits at a table, sweating and shaky, while a family member hands her a glucose tablet. A glass of water, a glucose meter and a clock are on the table.', 'Người phụ nữ ngồi ở bàn, đổ mồ hôi và run, người nhà đưa cho bà viên glucose. Trên bàn có ly nước, máy đo đường huyết và đồng hồ.'),
+  feet: t('여성이 소파에 앉아 발을 살피는 장면. 신경과 작은 상처가 표시된 발 그림과, 손거울로 발바닥을 확인하는 모습.', 'The woman sits on a sofa checking her feet: a drawing of a foot with nerves and a small wound, and her checking her sole with a hand mirror.', 'Người phụ nữ ngồi trên ghế sofa kiểm tra bàn chân: hình bàn chân có dây thần kinh và vết thương nhỏ, và cảnh bà dùng gương soi lòng bàn chân.'),
+  supplements: t('여성이 보충제 병을 들고 전문가와 이야기하는 장면. 식탁 위에 균형 잡힌 식사, 옆에 돋보기와 연구 자료.', 'The woman holds a supplement bottle and talks with a health professional. A balanced meal is on the table, with a magnifying glass and research papers nearby.', 'Người phụ nữ cầm lọ thực phẩm bổ sung và trò chuyện với chuyên gia y tế. Trên bàn có bữa ăn cân đối, bên cạnh là kính lúp và tài liệu nghiên cứu.')
+};
+for (const chapter of chapters) chapter.alt = imageAlt[chapter.id];
