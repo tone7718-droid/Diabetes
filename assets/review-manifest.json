@@ -1,0 +1,75 @@
+{
+  "reviewed": "2026-10-04",
+  "chapters": [
+    {
+      "id": "understanding",
+      "sourceHash": "30f778f2fa4d03e223c3a8c6e31b573e30a92c892f03013a5a1e7ab07a953094",
+      "translationHash": "30f778f2fa4d03e223c3a8c6e31b573e30a92c892f03013a5a1e7ab07a953094"
+    },
+    {
+      "id": "prevention",
+      "sourceHash": "2ed8c290694c2b3139685770845798ee91d0d8d1903a91ba63b75db779bb36ed",
+      "translationHash": "2ed8c290694c2b3139685770845798ee91d0d8d1903a91ba63b75db779bb36ed"
+    },
+    {
+      "id": "medicines",
+      "sourceHash": "d86ad1bce1e10e7aa6fdef862215b4b502f65947dffe0382c7e5c23fb860c99a",
+      "translationHash": "d86ad1bce1e10e7aa6fdef862215b4b502f65947dffe0382c7e5c23fb860c99a"
+    },
+    {
+      "id": "food",
+      "sourceHash": "6e83b202cbeb6b96f95c96b419347e8fd942379cc942e8724305a40daa92c608",
+      "translationHash": "6e83b202cbeb6b96f95c96b419347e8fd942379cc942e8724305a40daa92c608"
+    },
+    {
+      "id": "habits",
+      "sourceHash": "d6642119a722481505ab577dabde64b5699528ba3643b16a93e4c01d670b8ef8",
+      "translationHash": "d6642119a722481505ab577dabde64b5699528ba3643b16a93e4c01d670b8ef8"
+    },
+    {
+      "id": "exercise",
+      "sourceHash": "efdb3083a60d82c89b6798e1ab7b0cdfbee54f3b0f8ec7fecf7d93b7b441ffc1",
+      "translationHash": "efdb3083a60d82c89b6798e1ab7b0cdfbee54f3b0f8ec7fecf7d93b7b441ffc1"
+    },
+    {
+      "id": "safety",
+      "sourceHash": "aac673e13886e81fb007914d956605be109487efd80ef78f50c0feab867065b4",
+      "translationHash": "aac673e13886e81fb007914d956605be109487efd80ef78f50c0feab867065b4"
+    },
+    {
+      "id": "feet",
+      "sourceHash": "0f597f79be3604a9ee8e0debc585bd11167884da258021d86b9fc03c92b659f4",
+      "translationHash": "0f597f79be3604a9ee8e0debc585bd11167884da258021d86b9fc03c92b659f4"
+    },
+    {
+      "id": "supplements",
+      "sourceHash": "99c654639f2bffe2acaacefbb30e7eb3f450e366021f9bab1706337c1558525e",
+      "translationHash": "99c654639f2bffe2acaacefbb30e7eb3f450e366021f9bab1706337c1558525e"
+    },
+    {
+      "id": "shared-ui",
+      "sourceHash": "bcd77af5fd7c752e18ef53fb95d92c5f6fdd32d220c82d14cb34db655bcdf298",
+      "translationHash": "bcd77af5fd7c752e18ef53fb95d92c5f6fdd32d220c82d14cb34db655bcdf298"
+    },
+    {
+      "id": "shared-drugClasses",
+      "sourceHash": "38e900739d8b337fe0ff113f40793c1dce3809d89391d3aa91395f167e8f963e",
+      "translationHash": "38e900739d8b337fe0ff113f40793c1dce3809d89391d3aa91395f167e8f963e"
+    },
+    {
+      "id": "shared-ingredients",
+      "sourceHash": "a65a04efebd7693d49a0d3a31af614d88f436314e60a4cbcae11ffd4a5cbf977",
+      "translationHash": "a65a04efebd7693d49a0d3a31af614d88f436314e60a4cbcae11ffd4a5cbf977"
+    },
+    {
+      "id": "shared-rules",
+      "sourceHash": "a3a2a4f3b81201c9c12f2f48d2fa696255c00ec3046428ab9d538f1b7c6cfb7f",
+      "translationHash": "a3a2a4f3b81201c9c12f2f48d2fa696255c00ec3046428ab9d538f1b7c6cfb7f"
+    },
+    {
+      "id": "shared-research",
+      "sourceHash": "ae4ef5bd2405f7a6f743bc03857ec62ad21d47be6fda2e2c508141b3c617a91e",
+      "translationHash": "ae4ef5bd2405f7a6f743bc03857ec62ad21d47be6fda2e2c508141b3c617a91e"
+    }
+  ]
+}

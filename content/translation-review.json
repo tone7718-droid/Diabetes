@@ -1,0 +1,72 @@
+{
+  "understanding": {
+    "sourceHash": "30f778f2fa4d03e223c3a8c6e31b573e30a92c892f03013a5a1e7ab07a953094",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "prevention": {
+    "sourceHash": "2ed8c290694c2b3139685770845798ee91d0d8d1903a91ba63b75db779bb36ed",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "medicines": {
+    "sourceHash": "d86ad1bce1e10e7aa6fdef862215b4b502f65947dffe0382c7e5c23fb860c99a",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "food": {
+    "sourceHash": "6e83b202cbeb6b96f95c96b419347e8fd942379cc942e8724305a40daa92c608",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "habits": {
+    "sourceHash": "d6642119a722481505ab577dabde64b5699528ba3643b16a93e4c01d670b8ef8",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "exercise": {
+    "sourceHash": "efdb3083a60d82c89b6798e1ab7b0cdfbee54f3b0f8ec7fecf7d93b7b441ffc1",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "safety": {
+    "sourceHash": "aac673e13886e81fb007914d956605be109487efd80ef78f50c0feab867065b4",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "feet": {
+    "sourceHash": "0f597f79be3604a9ee8e0debc585bd11167884da258021d86b9fc03c92b659f4",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "supplements": {
+    "sourceHash": "99c654639f2bffe2acaacefbb30e7eb3f450e366021f9bab1706337c1558525e",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "shared-ui": {
+    "sourceHash": "bcd77af5fd7c752e18ef53fb95d92c5f6fdd32d220c82d14cb34db655bcdf298",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "shared-drugClasses": {
+    "sourceHash": "38e900739d8b337fe0ff113f40793c1dce3809d89391d3aa91395f167e8f963e",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "shared-ingredients": {
+    "sourceHash": "a65a04efebd7693d49a0d3a31af614d88f436314e60a4cbcae11ffd4a5cbf977",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "shared-rules": {
+    "sourceHash": "a3a2a4f3b81201c9c12f2f48d2fa696255c00ec3046428ab9d538f1b7c6cfb7f",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  },
+  "shared-research": {
+    "sourceHash": "ae4ef5bd2405f7a6f743bc03857ec62ad21d47be6fda2e2c508141b3c617a91e",
+    "reviewed": "2026-10-04",
+    "status": "educational-draft"
+  }
+}
