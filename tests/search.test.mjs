@@ -7,7 +7,7 @@ test('Vietnamese search ignores tone marks and đ',()=>{
   assert.equal(fold('Hạ đường huyết','vi'),'ha duong huyet');
   const plain=search(index('vi'),'ha duong huyet','vi'),marked=search(index('vi'),'hạ đường huyết','vi');
   assert.ok(plain.length>0);assert.deepEqual(plain.map(x=>x.file+'#'+x.id),marked.map(x=>x.file+'#'+x.id));
-  assert.ok(search(index('vi'),'ban chan','vi').some(x=>x.file==='chapter9.html'));
+  assert.ok(search(index('vi'),'ban chan','vi').some(x=>x.file==='feet.html'));
 });
 test('word-start matching and heading-first ordering',()=>{
   assert.ok(!search([{chapter:'',title:'',text:'khác'}],'ha','vi').length);

@@ -2,7 +2,8 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-const root=path.resolve(fileURLToPath(new URL('../',import.meta.url)));
+// Serves the repository by default; `node scripts/serve.mjs dist` serves exactly what is deployed.
+const root=path.resolve(fileURLToPath(new URL('../',import.meta.url)),process.argv[2]||'.');
 const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.jpg':'image/jpeg','.epub':'application/epub+zip'};
 http.createServer((req,res)=>{
   let name;try{name=decodeURIComponent(new URL(req.url,'http://localhost').pathname);}catch{res.writeHead(400).end();return;}
